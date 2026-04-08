@@ -1,0 +1,8 @@
+{
+  "0x02": "Apple iBeacon",
+  "0x05": "Apple AirTag",
+  "0x07": "Apple AirPods",
+  "0x10": "Apple Nearby Device",
+  "0x12": "Apple Continuity Device",
+  "0x16": "Apple Find My Device"
+}

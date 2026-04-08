@@ -1,0 +1,10 @@
+{
+  "0000180d-0000-1000-8000-00805f9b34fb": "Heart Rate Service",
+  "0000180f-0000-1000-8000-00805f9b34fb": "Battery Service",
+  "00001812-0000-1000-8000-00805f9b34fb": "HID Device",
+  "00001816-0000-1000-8000-00805f9b34fb": "Cycling Speed/Cadence",
+  "0000181a-0000-1000-8000-00805f9b34fb": "Environmental Sensor",
+  "0000feaa-0000-1000-8000-00805f9b34fb": "Eddystone Beacon",
+  "0000fe2c-0000-1000-8000-00805f9b34fb": "Fast Pair Service",
+  "0000fd6f-0000-1000-8000-00805f9b34fb": "Nearby Interaction"
+}

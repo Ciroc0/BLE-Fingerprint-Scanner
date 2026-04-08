@@ -1,0 +1,31 @@
+[package]
+name = "ble-fingerprint-scanner"
+version = "0.1.0"
+description = "Cross-platform BLE scanner for passive advertisement fingerprinting and analysis"
+authors = ["BLE Fingerprint Scanner Contributors"]
+license = "MIT"
+repository = "https://github.com/<owner>/ble-fingerprint-scanner"
+homepage = "https://github.com/<owner>/ble-fingerprint-scanner"
+readme = "../README.md"
+edition = "2021"
+rust-version = "1.77"
+keywords = ["ble", "bluetooth", "scanner", "fingerprinting", "iot"]
+categories = ["command-line-utilities", "network-programming", "development-tools"]
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+btleplug = "0.12"
+directories = "5.0"
+futures-util = "0.3"
+hex = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "sqlite"] }
+tauri = { version = "1.8", features = [] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "time"] }
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.tauri.app/config/1",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "BLE Fingerprint Scanner",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false
+    },
+    "bundle": {
+      "active": true,
+      "identifier": "com.blefingerprintscanner.desktop",
+      "macOS": {
+        "minimumSystemVersion": "12.0"
+      },
+      "windows": {
+        "digestAlgorithm": "sha256"
+      }
+    },
+    "windows": [
+      {
+        "title": "BLE Fingerprint Scanner",
+        "width": 1480,
+        "height": 920,
+        "minWidth": 1180,
+        "minHeight": 720,
+        "resizable": true
+      }
+    ]
+  }
+}

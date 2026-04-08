@@ -1,0 +1,30 @@
+# Text files
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.rs text eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+*.csv text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.pdf binary
+*.zip binary
+
+# Linguist settings
+src/utils/deviceIdentifier.ts linguist-language=TypeScript
+docs/ linguist-documentation
