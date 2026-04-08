@@ -50,20 +50,40 @@ jobs:
         with:
           toolchain: ${{ matrix.rust }}
 
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            curl \
+            file \
+            libayatana-appindicator3-dev \
+            libssl-dev \
+            libsoup2.4-dev \
+            libwebkit2gtk-4.1-dev \
+            libxdo-dev \
+            librsvg2-dev \
+            libfuse-dev \
+            libbluetooth-dev \
+            libglib2.0-dev \
+            patchelf \
+            pkg-config
+
       - name: Cache cargo registry
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cargo/registry
           key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Cache cargo index
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cargo/git
           key: ${{ runner.os }}-cargo-git-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Cache cargo build
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: src-tauri/target
           key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
@@ -142,12 +162,15 @@ jobs:
             file \
             libayatana-appindicator3-dev \
             libssl-dev \
+            libsoup2.4-dev \
             libwebkit2gtk-4.1-dev \
             libxdo-dev \
             librsvg2-dev \
             libfuse-dev \
             libbluetooth-dev \
-            patchelf
+            libglib2.0-dev \
+            patchelf \
+            pkg-config
 
       - name: Install frontend deps
         run: npm ci
@@ -156,7 +179,7 @@ jobs:
         run: npm run tauri build
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: artifacts-${{ matrix.os }}
